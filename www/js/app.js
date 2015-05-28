@@ -14,9 +14,21 @@ angular.module('timekpr', ['ionic', 'timekpr.controllers', 'timekpr.services'])
    })
 })
 .provider('persistance', function PersistanceProvider() {
-  this.$get = ["$localstorage", function unicornLauncherFactory($localstorge) {
+  this.$get = ["$window", function persistanceFactory($window) {
       return {
-      }
+         set: function(key, value) {
+             $window.localStorage[key] = value;
+         },
+         get: function(key, defaultValue) {
+            return $window.localStorage[key] || defaultValue;
+         },
+         setObject: function(key, value) {
+            $window.localStorage[key] = JSON.stringify(value);
+         },
+         getObject: function(key) {
+             return JSON.parse($window.localStorage[key] || '{}');
+         }
+      };
   }];
 })
 .config(function($stateProvider, $urlRouterProvider) {

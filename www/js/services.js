@@ -6,7 +6,7 @@ angular.module('timekpr.services', [])
  * provides methods to start / stop timers and track time elapsed.
  * enforces logic that only one project can be timing at any moment.
  */
-.factory('Projects', function() {
+.factory('Projects', function(persistance) {
 
   /*
    * Project constructor function encapsulates Project "state" logic
@@ -47,6 +47,11 @@ angular.module('timekpr.services', [])
      savedProject.start = timestamp;
      current = savedProject.id;
   };
+  
+  function saveState(){
+    persistance.setObject('timekprProjects', projects);
+    persistance.set('timekprCurrentProject', current);
+  }
 
   return {
     all: function() {
@@ -61,9 +66,11 @@ angular.module('timekpr.services', [])
         clearCurrent(now);
       }
       setCurrent(now, project);
+      saveState();
     },
     stopTimer: function(){
         clearCurrent(new Date());
+        saveState();
     }
   };
 });
