@@ -26,7 +26,7 @@
     "com.brodysoft.sqlitePlugin": {
         "source": {
             "type": "registry",
-            "id": "com.brodysoft.sqliteplugin"
+            "id": "com.brodysoft.sqlitePlugin@^1.0.6"
         },
         "is_top_level": true,
         "variables": {}

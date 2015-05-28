@@ -43,8 +43,8 @@
 		AAF653DEAEA24C5CB252D6DD /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AC185516D8CD4DD28A4A68AA /* UIWebViewExtension.m */; };
 		DC216036805C4033958228E4 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F208D34C9A84DFF8706C59A /* CDVLogger.m */; };
 		606A0737E9F34DDC8540FCF1 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C1378073914CD294B2EC3B /* CDVDevice.m */; };
-		16F7FD32FE4A407384D50D50 /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E95FCA0A74ABD9D81D0A5 /* SQLitePlugin.m */; };
-		0E7EEF53C0AA4CF2B0A4628D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EF51843EBFBB4BBF9C4818D3 /* libsqlite3.dylib */; };
+		501427FF1BC044E5B8152063 /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA8EBE57BAD445AB362901C /* SQLitePlugin.m */; };
+		E0511B6087A447E8B3B4B7BF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE33AC1C034B43DBA1D6B9BA /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,9 +118,9 @@
 		99D8FF3619BF4EB39FFC65B7 /* CDVLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLogger.h"; path = "org.apache.cordova.console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		C6C1378073914CD294B2EC3B /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		7913FE6303AC461BB66A8DB3 /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		F79E95FCA0A74ABD9D81D0A5 /* SQLitePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SQLitePlugin.m"; path = "com.brodysoft.sqlitePlugin/SQLitePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		39679182420D4795B96006AE /* SQLitePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SQLitePlugin.h"; path = "com.brodysoft.sqlitePlugin/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		EF51843EBFBB4BBF9C4818D3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsqlite3.dylib"; path = "usr/lib/libsqlite3.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
+		AFA8EBE57BAD445AB362901C /* SQLitePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SQLitePlugin.m"; path = "com.brodysoft.sqlitePlugin/SQLitePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		3EB05302893E4E3CA7EA5410 /* SQLitePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SQLitePlugin.h"; path = "com.brodysoft.sqlitePlugin/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		AE33AC1C034B43DBA1D6B9BA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsqlite3.dylib"; path = "usr/lib/libsqlite3.dylib"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
-				0E7EEF53C0AA4CF2B0A4628D /* libsqlite3.dylib in Frameworks */,
+				E0511B6087A447E8B3B4B7BF /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +205,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
-				EF51843EBFBB4BBF9C4818D3 /* libsqlite3.dylib */,
+				AE33AC1C034B43DBA1D6B9BA /* libsqlite3.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -229,8 +229,8 @@
 				99D8FF3619BF4EB39FFC65B7 /* CDVLogger.h */,
 				C6C1378073914CD294B2EC3B /* CDVDevice.m */,
 				7913FE6303AC461BB66A8DB3 /* CDVDevice.h */,
-				F79E95FCA0A74ABD9D81D0A5 /* SQLitePlugin.m */,
-				39679182420D4795B96006AE /* SQLitePlugin.h */,
+				AFA8EBE57BAD445AB362901C /* SQLitePlugin.m */,
+				3EB05302893E4E3CA7EA5410 /* SQLitePlugin.h */,
 			);
 			name = Plugins;
 			path = "Timekpr/Plugins";
@@ -419,7 +419,7 @@
 				AAF653DEAEA24C5CB252D6DD /* UIWebViewExtension.m in Sources */,
 				DC216036805C4033958228E4 /* CDVLogger.m in Sources */,
 				606A0737E9F34DDC8540FCF1 /* CDVDevice.m in Sources */,
-				16F7FD32FE4A407384D50D50 /* SQLitePlugin.m in Sources */,
+				501427FF1BC044E5B8152063 /* SQLitePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
