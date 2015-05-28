@@ -1,6 +1,6 @@
-angular.module('timekpr', ['ionic', 'ng-cordova',  'timekpr.controllers', 'timekpr.services'])
+angular.module('timekpr', ['ionic', 'timekpr.controllers', 'timekpr.services'])
 
-.run(function($ionicPlatform, $cordovaSQLite) {
+.run(function($ionicPlatform ) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -11,11 +11,14 @@ angular.module('timekpr', ['ionic', 'ng-cordova',  'timekpr.controllers', 'timek
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-    var db = $cordovaSQLite.openDB("timekpr.db");
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS project (id integer primary key, name text, elapsed integer)");
-  });
+   })
 })
-
+.provider('persistance', function PersistanceProvider() {
+  this.$get = ["$localstorage", function unicornLauncherFactory($localstorge) {
+      return {
+      }
+  }];
+})
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
