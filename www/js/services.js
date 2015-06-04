@@ -7,7 +7,29 @@ angular.module('timekpr.services', [])
  * enforces logic that only one project can be timing at any moment.
  */
 .factory('Projects', function(persistance) {
-
+   var key_TimeKprData = 'timekprData';
+   var projects;
+   var current;
+   var savedState = persistance.getObject(key_TimeKprData);
+   if (! savedState || _.isEmpty(savedState)) {
+     initProjects();
+     saveState();
+   } else {
+     projects = savedState.projectList;
+     current = savedState.currentId;
+   }
+   function formatTime() {
+      var shoDate = new Date(0, 0, 0, 0, 0, 0, this.elapsed);
+      this.time =  shoDate.getHours() + ":" + shoDate.getMinutes() + ":" +  shoDate.getSeconds();
+   }
+   function initProjects(){
+     projects =[
+       new Project('Bench', 0),
+       new Project('PTO', 1),
+       new Project('EFX-CallCenter', 2)
+     ];
+     current = -1;
+   }
   /*
    * Project constructor function encapsulates Project "state" logic
    */
@@ -16,18 +38,9 @@ angular.module('timekpr.services', [])
     this.name = name;
     this.start = 0;
     this.elapsed = 0;
-    this.time = function(){
-      var shoDate = new Date(0, 0, 0, 0, 0, 0, this.elapsed);
-      return shoDate.getHours() + ":" + shoDate.getMinutes() + ":" +  shoDate.getSeconds();
-    }
+    this.time = "";
   }
-  var projects =[
-     new Project('Bench', 0),
-     new Project('PTO', 1),
-     new Project('EFX-CallCenter', 2)
-  ];
 
-  var current = -1;
 
   function clearCurrent(timestamp){
      //check again just in case.
@@ -38,6 +51,7 @@ angular.module('timekpr.services', [])
      //now process.
      var deltaTime = timestamp - currentProject.start;
      currentProject.elapsed += deltaTime;
+     formatTime.call(currentProject);
      //finally update to no project
      current = -1;
   };
@@ -49,8 +63,7 @@ angular.module('timekpr.services', [])
   };
   
   function saveState(){
-    persistance.setObject('timekprProjects', projects);
-    persistance.set('timekprCurrentProject', current);
+    persistance.setObject(key_TimeKprData, { projectList : projects, currentId : current});
   }
 
   return {
