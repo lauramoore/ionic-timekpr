@@ -1,0 +1,35 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"browser-package\" value=\"Device\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.brodysoft.sqlitePlugin": {
+            "PACKAGE_NAME": "com.ionicframework.tabs765771"
+        },
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.tabs765771"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.ionicframework.tabs765771"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.ionicframework.tabs765771"
+        }
+    },
+    "dependent_plugins": {}
+}
